@@ -19,7 +19,7 @@ In the Graph Editor, Channel menu, there will be a new entry called "Interpolate
 
 ## Notes
 I have used some junks of the code of Fabrizio Nunnari:
-* [Simplify Multiple F-Curves](https://developer.blender.org/T36097) is a Blender addon to simplify and align the keyframes of multiple F-Curves at once.
+* [**Simplify Multiple F-Curves**](https://developer.blender.org/T36097) is a Blender addon to simplify and align the keyframes of multiple F-Curves at once.
 
 
 
