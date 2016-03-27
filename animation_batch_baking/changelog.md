@@ -1,6 +1,6 @@
-# Changelog for Cyclic Animation Interpolation
+# Changelog for Animation Batch Baking
 
-* **v1.0 [27-3-16]** - Fully functional script.
+* **v1.0 [27-3-16]** - Fully functional script. Bakes all the actions of the model and store the result in actions with the same name.
 
 ## TODO
 
