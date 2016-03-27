@@ -4,6 +4,6 @@
 
 ## TODO
 
-Look for an optimizer addon for the fcurves and integrate it within this script.
+* Look for an optimizer addon for the fcurves and integrate it within this script.
 
-Look for ways of exporting the result aside from the current savefile.
+* Look for ways of exporting the result aside from the current savefile.
