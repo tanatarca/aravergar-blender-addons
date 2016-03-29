@@ -12,6 +12,7 @@ You have to enable the addon via Add-ons entry in Blender User Preferences. Sear
 ## Prerequisites
 To have an active armature.
 The armature has animations, but there is no active animations and the NLA stack is empty.
+The animations follow an strict nomenclature (needed for my personal projects). The channel is specified in the action name: ActionName-channel_number
 
 ## Usage
 In the NLA Editor, Edit menu, there will be a new entry called "Animation Batch Baking". Click on that entry when you are ready. The stored animation will be backed and saved under the same action names.
