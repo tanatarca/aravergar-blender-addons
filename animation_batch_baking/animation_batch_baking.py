@@ -21,7 +21,7 @@ bl_info = {
     "description": "Batch bakes the actions of the object, clearing all bone constraints, for compatibility with JMonkeyEngine 3",
     "author": "aravergar",
     "email": "aravergar@gmail.com",
-    "version": (1, 0),
+    "version": (1, 1),
     "blender": (2, 76, 2),
     "location": "NLA Editor > Edit > Animation Batch Baking",
     "warning": "",
@@ -60,15 +60,32 @@ def main(context):
     actions = list(bpy.data.actions)
     d = defaultdict(list)
     
-    # Groups actions under the same animation name in a defaultdict
+    # Groups actions under the same animation name
+    # in a defaultdict IF the name specifies this object
+    if obj.name == "Person":
+        person = True
+    else:
+        person = False
     for act in actions:
-        anim = act.name.split("-")[0]
-        d[anim].append(act)
-        actions.remove(act)
-        for a in actions[:]:
-            if a.name.split("-")[0] == anim:
-                d[anim].append(a)
-                actions.remove(a)
+        #~ anim = act.name.split("-")[0] # anim = "[X.X]_Anim"
+        #~ anim += "-"+act.name.split("_").pop() # anim = "[X.X]_Anim-000"
+        anim = act.name.split("-")[0]+"-"+act.name.split("_").pop() # anim = "[X.X]_Anim-000"
+        if ((person == True) and (len(anim.split("_")) != 1)) or ((person == False) and (len(anim.split("_")) == 1)):
+            d[anim].append(act)
+            actions.remove(act)
+            for ch in actions[:]:
+                if (ch.name.split("-")[0]+"-"+ch.name.split("_").pop()) == anim:
+                    d[anim].append(ch)
+                    actions.remove(ch)
+        
+    #~ for act in actions:
+        #~ anim = act.name.split("-")[0]
+        #~ d[anim].append(act)
+        #~ actions.remove(act)
+        #~ for a in actions[:]:
+            #~ if a.name.split("-")[0] == anim:
+                #~ d[anim].append(a)
+                #~ actions.remove(a)
     
     names = []
     for name in d: # Recorre las animaciones
