@@ -22,4 +22,4 @@ Not fully optimised, so the baking process could be rather long (between 5 and 2
 
 ## Version
 
-1.1
+1.2
