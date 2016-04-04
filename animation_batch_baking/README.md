@@ -19,6 +19,7 @@ In the NLA Editor, Edit menu, there will be a new entry called "Animation Batch 
 
 ## Notes
 Not fully optimised, so the baking process could be rather long (between 5 and 20 seconds in my models, it just dependes on the number and complexity of the actions).
+v1.2 differs from v1.1 in the way channels group the actions to be baked. v1.2 no longer groups actions according to their number
 
 ## Version
 
